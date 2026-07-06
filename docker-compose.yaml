@@ -1,0 +1,10 @@
+services:
+  airflow: # 1. service name
+    image: apache/airflow:latest # 2. image
+    container_name: airflow # 3. container name
+    hostname: airflow # 4. Host name
+    command: airflow standalone # 5. run the primary command
+    ports:
+      - 8080:8080 # 6. Airflow web UI
+    volumes:
+      - ./dags:/opt/airflow/dags # 7. map local folder to container folder
